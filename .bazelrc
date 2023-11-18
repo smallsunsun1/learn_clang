@@ -1,0 +1,8 @@
+common --enable_platform_specific_config
+common --experimental_allow_unresolved_symlinks
+common --show_timestamps
+# Do not show warnings from external dependencies.
+common --output_filter="^//"
+
+build:macos --cxxopt="-std=c++20"
+build:macos --host_cxxopt="-std=c++20"

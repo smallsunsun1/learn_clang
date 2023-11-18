@@ -1,0 +1,9 @@
+"""learn_clang"""
+module(
+    name = "learn_clang",
+    version = "1.0.0",
+    compatibility_level = 1,
+)
+
+bazel_dep(name = "llvm-project", version = "17.0.3")
+bazel_dep(name = "platforms", version = "0.0.7")
