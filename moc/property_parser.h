@@ -1,0 +1,4 @@
+#ifndef MOC_PROPERTY_PARSER
+#define MOC_PROPERTY_PARSER
+
+#endif /* MOC_PROPERTY_PARSER */

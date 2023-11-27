@@ -1,0 +1,109 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "common",
+    srcs = [
+        "common.cpp",
+    ],
+    hdrs = [
+        "common.h",
+    ],
+    deps = [
+        "@llvm-project//clang:tooling",
+        "@llvm-project//llvm:Support",
+    ],
+)
+
+cc_library(
+    name = "generator",
+    srcs = [
+        "generator.cpp",
+    ],
+    hdrs = [
+        "generator.h",
+    ],
+    deps = [
+        ":common",
+    ],
+)
+
+cc_library(
+    name = "moc_ng",
+    srcs = [
+        "moc_ng.cpp",
+    ],
+    hdrs = [
+        "moc_ng.h",
+    ],
+    deps = [
+        ":common",
+        ":qobjs",
+    ],
+)
+
+cc_library(
+    name = "moc_ast_consumer",
+    srcs = [
+        "moc_ast_consumer.cpp",
+    ],
+    hdrs = [
+        "moc_ast_consumer.h",
+    ],
+    deps = [
+        ":common",
+    ],
+)
+
+cc_library(
+    name = "moc_pp_callbacks",
+    srcs = [
+        "moc_pp_callbacks.cpp",
+    ],
+    hdrs = [
+        "moc_pp_callbacks.h",
+    ],
+    deps = [
+        ":common",
+        "@llvm-project//clang:tooling",
+        "@llvm-project//llvm:Support",
+    ],
+)
+
+cc_library(
+    name = "qobjs",
+    srcs = [
+        "qobjs.cpp",
+    ],
+    hdrs = [
+        "qobjs.h",
+    ],
+    deps = [
+        ":common",
+        "@llvm-project//clang:tooling",
+        "@llvm-project//llvm:Support",
+    ],
+)
+
+cc_library(
+    name = "property_parser",
+    srcs = [
+        "property_parser.cpp",
+    ],
+    hdrs = [
+        "property_parser.h",
+    ],
+    deps = [
+        "@llvm-project//clang:tooling",
+        "@llvm-project//llvm:Support",
+    ],
+)
+
+cc_binary(
+    name = "main",
+    srcs = [
+        "main.cpp",
+    ],
+    deps = [
+        ":moc_pp_callbacks",
+    ],
+)

@@ -1,0 +1,12 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_binary(
+    name = "test_macro",
+    srcs = [
+        "test_macro.cpp",
+    ],
+    deps = [
+        "@llvm-project//clang:tooling",
+        "@llvm-project//llvm:Support",
+    ],
+)

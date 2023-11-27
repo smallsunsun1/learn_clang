@@ -10,3 +10,36 @@ cc_binary(
         "@llvm-project//llvm:Support",
     ],
 )
+
+cc_binary(
+    name = "find_class_decls",
+    srcs = [
+        "find_class_decls.cpp",
+    ],
+    deps = [
+        "@llvm-project//clang:tooling",
+        "@llvm-project//llvm:Support",
+    ],
+)
+
+cc_binary(
+    name = "ast_importer_main",
+    srcs = [
+        "ast_importer_main.cpp",
+    ],
+    deps = [
+        "@llvm-project//clang:tooling",
+        "@llvm-project//llvm:Support",
+    ],
+)
+
+cc_binary(
+    name = "ast_importer_main2",
+    srcs = [
+        "ast_importer_main2.cpp",
+    ],
+    deps = [
+        "@llvm-project//clang:tooling",
+        "@llvm-project//llvm:Support",
+    ],
+)
